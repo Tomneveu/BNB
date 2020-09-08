@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20200908081141 extends AbstractMigration
+final class Version20200908083430 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -20,12 +20,12 @@ final class Version20200908081141 extends AbstractMigration
     public function up(Schema $schema) : void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('CREATE TABLE maisons (id INT AUTO_INCREMENT NOT NULL, titre VARCHAR(255) NOT NULL, description VARCHAR(255) NOT NULL, chambres INT NOT NULL, prix DOUBLE PRECISION NOT NULL, note INT DEFAULT NULL, superficie INT NOT NULL, img1 VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('ALTER TABLE maisons ADD img2 VARCHAR(255) DEFAULT NULL, ADD img3 VARCHAR(255) DEFAULT NULL');
     }
 
     public function down(Schema $schema) : void
     {
         // this down() migration is auto-generated, please modify it to your needs
-        $this->addSql('DROP TABLE maisons');
+        $this->addSql('ALTER TABLE maisons DROP img2, DROP img3');
     }
 }
