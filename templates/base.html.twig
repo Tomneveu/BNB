@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Thomas NEVEU">
 
-        <title>BNB - {% block title %}Welcome!{% endblock %}</title>
+        <title>BNB - {% block title %}Base{% endblock %}</title>
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link rel="stylesheet" href="{{ asset('css/style.css')}}"> {# asset pour viser le public #}
@@ -22,24 +22,32 @@
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
 
-        <footer>
+        <footer class="bg-light">
             <div class="container-fluid">
-                <div class="row text-center bg-dark text-white">
-                    <div class="col-6 p-5 font-weight-light">
-                        <p class="font-weight-bold">Coordonn&eacute;es</p>
-                        <div class="dropdown-divider m-3"></div>
-                        <p>100 rue de la Ville</p>
-                        <p>62200 Boulogne-Sur-Mer</p>
+                <div class="row text-center text-dark">
+                    <div class="col-md-4 p-5 my-auto">
+                        <p>QUELQUES LIENS</p>
+                        <p class="dropdown-divider"></p>
+                        <ul>
+                            <li><a href="{{ path('home') }}">Accueil</a></li>
+                            <li><a href="{{ path('admin') }}">Admin</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 p-5 my-auto">
+                        <span class="logo"><img src="{{ asset('img/logo.png') }}" alt="logo BNB"></span>
+                    </div>
+                    <div class="col-md-4 p-5 my-auto">
+                        <p>COORDONN&Eacute;ES</p>
+                        <p class="dropdown-divider"></p>
+                        <p>10 rue du Village</p>
+                        <p>12345 Ville</p>
                         <p>01.23.45.67.89</p>
-                        <p>nom.prenom@mail.com</p>
+                        <p>prenom.nom@mail.com</p>
                     </div>
-                    <div class="col-md-6 p-5 font-weight-light">
-                        <p class="font-weight-bold">&Agrave; propos</p>
-                        <div class="dropdown-divider m-3"></div>
-                        <p>Nous mettons en relations les voyageurs et les propri&eacute;taires qui veulent profiter d'opportunit&eacute;s et gagner de l'argent en proposant leur bien &agrave; la location !</p>
-                    </div>
-                    <div class="col-12 p-3 font-weight-light">
-                        {{ copyright|raw }}
+                </div>
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <p>{{ copyright|raw }}</p>
                     </div>
                 </div>
             </div>
@@ -49,5 +57,5 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     </body>
-    
+
 </html>
