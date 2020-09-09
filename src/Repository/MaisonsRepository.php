@@ -48,13 +48,13 @@ class MaisonsRepository extends ServiceEntityRepository
     }
     */
 
-    public function findSix() /* pour ne sélectionner que 6 maisons */
+    public function findThree() /* pour ne sélectionner que 6 maisons */
     {
         return $this->createQueryBuilder('s') /* 's' est un alias */
             ->andWhere('s.id > :val') /* on cherhce un id supérieur à une valeur */
             ->setParameter('val', '0') /* on donne la valeur */
             ->orderBy('s.id', 'DESC') /* tri en ordre décroissant */
-            ->setMaxResults(6) /* on sélectionne 6 résultats maximum */
+            ->setMaxResults(3) /* on sélectionne 6 résultats maximum */
             ->getQuery() /* requête */
             ->getResult() /* résultats */
         ;

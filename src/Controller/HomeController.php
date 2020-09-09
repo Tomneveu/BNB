@@ -13,7 +13,7 @@ class HomeController extends AbstractController
      */
     public function index(MaisonsRepository $maisonsRepository)
     {
-        $maisons = $maisonsRepository->findSix();
+        $maisons = $maisonsRepository->findThree();
 
         return $this->render('home/index.html.twig', [
             'maisons' => $maisons,
